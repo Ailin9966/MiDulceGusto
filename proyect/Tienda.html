@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Dulce Gusto</title>
+  <link rel="stylesheet" href="tienda.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">MiDulceGusto</div>
+      <ul class="menu">
+  <li><a href="Contactos.html">Contacto</a></li>
+  <li><a href="Ubicacion.html">Ubicación</a></li>
+  <li><a href="formulario.html" class="registrarse">Regístrate</a></li>
+  <li><a href="pract1.html" class="Carrito">Carrito</a></li>
+</ul>
+
+    </nav>
+  </header>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="d2.jpg" alt="Imagen 1" />
+      <img src="d3.jpg" alt="Imagen 2" />
+      <img src="vd.jpg" alt="Imagen 3" />
+      <img src="d2.jpg" alt="Imagen 1 copia" />
+      <img src="d3.jpg" alt="Imagen 2 copia" />
+      <img src="vd.jpg" alt="Imagen 3 copia" />
+    </div>
+  </div>
+
+  <section class="especiales">
+    <h2>LO MÁS VENDIDO</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="d12.jpg" alt="Golden Crumbs" />
+        <h3>Golden Crumbs</h3>
+        <p class="precio">$699</p>
+        <button onclick="agregarAlCarrito('Golden Crumbs', 699)">AGREGAR 🛒</button>
+      </div>
+
+      <div class="producto">
+        <img src="d16.jpg" alt="Pastel Tiramisu" />
+        <h3>Pastel Tiramisu</h3>
+        <p class="precio">$699</p>
+        <button onclick="agregarAlCarrito('Golden Crumbs', 699)">AGREGAR 🛒</button>
+      </div>
+
+      <div class="producto">
+        <img src="d15.jpg" alt="Cruffin Toffee" />
+        <h3>Cruffin Toffee</h3>
+        <p class="precio">$56</p>
+        <button onclick="agregarAlCarrito('Golden Crumbs', 699)">AGREGAR 🛒</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="contenedor-boton">
+    <a href="productos.html" class="boton-comprar">Otros productos</a>
+  </div>
+
+  <footer class="footer">
+    <p>MI DULCE GUSTO 2025</p>
+  </footer>
+
+  <style>
+    .footer {
+      background-color: #ffb6c1; /* Ajusta este color para que coincida con el menú */
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .agregar {
+      display: inline-block;
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .agregar:hover {
+      background-color: #e75496;
+    }
+
+    button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #fbb1d6, #fcd2e6); /* Rosa pastel degradado */
+  color: #6d3b8e; /* Morado elegante */
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: linear-gradient(to right, #fcd2e6, #fbb1d6); /* Reverso del degradado */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+  </style>
+
+  <script>
+  function agregarAlCarrito(nombre, precio) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    carrito.push({ nombre, precio });
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    window.location.href = "pract1.html"; // redirige al carrito
+  }
+</script>
+</body>
+</html>
+

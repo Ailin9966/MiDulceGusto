@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito de Encargos</title>
+  <link rel="stylesheet" href="pract1.css"/>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffe6f0;
+    }
+
+    .menu {
+      background-color: #fba1d0;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .menu h1 {
+      margin: 0;
+      color: white;
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+
+    .contenido {
+      flex: 1; /* ¡Esto hace que empuje el footer hacia abajo! */
+      padding: 60px 20px 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contenedor-carrito {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .producto {
+      background-color: #fff0fa;
+      border: 2px solid #ffc8e4;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .precio {
+      color: #d63384;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .boton, .eliminar {
+      background: linear-gradient(to right, #fda4cf, #ffc9e2);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      color: #6b1a78;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin: 5px;
+    }
+
+    .boton:hover, .eliminar:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #ffc9e2, #fda4cf);
+    }
+
+    .total {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    .footer {
+      background-color: #fba1d0;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="menu">
+    <h1>CARRITO DE ENCARGOS</h1>
+  </header>
+
+  <main class="contenido">
+    <section id="carrito" class="contenedor-carrito"></section>
+    <h2 id="total" class="total"></h2>
+
+    <div class="botones-carrito" style="text-align: center; margin-top: 30px;">
+  <button class="boton" onclick="vaciarCarrito()">Vaciar Carrito</button>
+  <button class="boton" onclick="window.location.href='productos.html'">⬅ Volver a Productos</button>
+  <button class="boton" onclick="window.location.href='formulario.html'">Registrarme ✍️</button>
+  <button class="boton" onclick="window.location.href='Tienda.html'">🏠 Página Principal</button>
+</div>
+
+  </main>
+
+  <footer class="footer">
+    MI DULCE GUSTO 2025
+  </footer>
+
+  <script>
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let carritoElemento = document.getElementById("carrito");
+    let totalElemento = document.getElementById("total");
+
+    function actualizarCarrito() {
+      if (carrito.length === 0) {
+        carritoElemento.innerHTML = "<p class='vacio'>Tu carrito está vacío 🛍️</p>";
+        totalElemento.innerText = "Total: $0";
+      } else {
+        let total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+        carritoElemento.innerHTML = carrito.map((producto, index) => `
+          <div class="producto">
+            <h3>${producto.nombre}</h3>
+            <p class="precio">$${producto.precio}</p>
+            <button class="eliminar" onclick="eliminarProducto(${index})">Eliminar ✖</button>
+          </div>
+        `).join("");
+        totalElemento.innerText = `Total: $${total}`;
+      }
+    }
+
+    function eliminarProducto(index) {
+      carrito.splice(index, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      actualizarCarrito();
+    }
+
+    function vaciarCarrito() {
+      localStorage.removeItem("carrito");
+      carrito = [];
+      actualizarCarrito();
+    }
+
+    actualizarCarrito();
+  </script>
+
+</body>
+</html>
+

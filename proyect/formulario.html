@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulario de Pedido</title>
+  <link rel="stylesheet" href="formulario1.css" />
+</head>
+<body>
+
+  <div class="formulario-contenedor">
+    <h1>Regístrate y Envía tu Pedido</h1>
+    <form action="procesar.php" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" required />
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" name="correo" id="correo" required />
+
+      <label for="fecha">¿Para cuándo quieres tu pedido?</label>
+      <input type="date" name="fecha" id="fecha" required />
+
+      <label for="pedido">Tu pedido:</label>
+      <textarea name="pedido" id="pedido" rows="6" readonly required></textarea>
+
+      <button type="submit">Enviar Pedido</button>
+    </form>
+  </div>
+<div class="contenedor-boton">
+  <a href="Tienda.html" class="boton-regresar">🌸 Página Inicio</a>
+</div>
+
+  <script>
+    const pedidoCampo = document.getElementById("pedido");
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    if (carrito.length === 0) {
+      pedidoCampo.value = "Tu carrito está vacío.";
+    } else {
+      const resumen = carrito.map(item => `• ${item.nombre} - $${item.precio}`).join('\n');
+      const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+      pedidoCampo.value = `${resumen}\n\nTotal: $${total}`;
+    }
+  </script>
+  
+
+</body>
+</html>
+

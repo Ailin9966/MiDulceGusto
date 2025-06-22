@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f33a15;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d87a8a;
+  padding: 1rem 0.5rem;
+  color: rgb(185, 29, 29);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&display=swap');
+
+.logo {
+    font-family: 'Cinzel', serif; 
+    font-size: 26px; 
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(236, 151, 222, 0.4); 
+    letter-spacing: 2px; 
+    padding: 10px;
+}
+
+
+.logo.alternativo {
+    font-family: 'Great Vibes', cursive; 
+    font-size: 28px;
+}
+
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 5;
+  padding: 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+
+.menu li a:hover {
+  color: #ffe4ec;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu li a.registrarse {
+  font-weight: bold;
+  color: #f3e5ec;
+  transition: all 0.3s ease;
+}
+
+
+
+.menu li a.Carrito {
+  font-weight: bold;
+  color: #f3e5ec;
+  transition: all 0.3s ease;
+}
+
+
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.carousel {
+  width: 1400px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  margin: auto; 
+  border: 4px solid #ccc; 
+  border-radius: 10px; 
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(8 * 200px); 
+  animation: scroll 8s linear infinite;
+}
+
+.carousel-track img {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  flex-shrink: 2;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-3 * 200px)); 
+  }
+}
+.boton-comprar {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #da48a2; 
+    border-radius: 30px; 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+.boton-comprar:hover {
+    background-color: #f94fff; 
+    transform: scale(1.1); 
+}
+.contenedor-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfc;
+  color: #444;
+}
+
+.especiales {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.especiales h2 {
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 40px;
+}
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.producto {
+  width: 260px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.producto h3 {
+  font-size: 18px;
+  margin: 12px 0 6px;
+}
+
+.precio {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 12px;
+}
+.agregar {
+  background-color: #a56c8c;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.agregar:hover {
+  background-color: #8c5470;
+}

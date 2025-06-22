@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compra</title>
+  <link rel="stylesheet" href="productos2.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff0f5;
+    }
+
+    /* Barra de menú */
+    .barra-menu {
+      background-color: #ffc1e3;
+      padding: 15px 0;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    /* Contenedor general */
+    .especiales {
+      padding: 100px 20px 40px;
+    }
+
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .producto {
+      width: 220px;
+      background: white;
+      border: 2px solid #ffd6eb;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      pointer-events: none;
+    }
+
+    .producto h3 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .precio {
+      color: #e91e63;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .agregar {
+      background: linear-gradient(to right, #fbb1d6, #fcd2e6);
+      color: #6d3b8e;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .agregar:hover {
+      background: linear-gradient(to right, #fcd2e6, #fbb1d6);
+      transform: scale(1.05);
+    }
+
+    /* Pie de página */
+    footer {
+      background-color: #ffc1e3;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Barra de menú -->
+  <nav class="barra-menu">
+    <div class="logo">Compra nuestras delicias</div>
+  </nav>
+
+  <!-- Sección de productos -->
+  <section class="especiales">
+    <div class="productos">
+
+      <!-- Productos existentes -->
+      <div class="producto">
+        <img src="pl.jpg" alt="Golden Crumbs">
+        <h3>Golden Crumbs</h3>
+        <p class="precio">$250</p>
+        <button class="agregar" onclick="agregarAlCarrito('Golden Crumbs', 250)">Agregar 🛒</button>
+      </div>
+
+      <div class="producto">
+        <img src="d16.jpg" alt="Pastel Rosado">
+        <h3>Pastel Rosado</h3>
+        <p class="precio">$300</p>
+        <button class="agregar" onclick="agregarAlCarrito('Pastel Rosado', 300)">Agregar 🛒</button>
+      </div>
+
+      <div class="producto">
+        <img src="d15.jpg" alt="Cruffin Toffee">
+        <h3>Cruffin Toffee</h3>
+        <p class="precio">$120</p>
+        <button class="agregar" onclick="agregarAlCarrito('Cruffin Toffee', 120)">Agregar 🛒</button>
+      </div>
+
+      <!-- 6 Productos nuevos -->
+      <div class="producto">
+        <img src="d3.jpg" alt="Delicia de Miel">
+        <h3>Delicia de Miel</h3>
+        <p class="precio">$180</p>
+        <button class="agregar" onclick="agregarAlCarrito('Delicia de Miel', 180)">Agregar 🛒</button>
+      </div>
+
+      <div class="producto">
+        <img src="vd.jpg" alt="Frambuesa Soft">
+        <h3>Frambuesa Soft</h3>
+        <p class="precio">$90</p>
+        <button class="agregar" onclick="agregarAlCarrito('Frambuesa Soft', 90)">Agregar 🛒</button>
+      </div>
+
+      <div class="producto">
+        <img src="d2.jpg" alt="Cake Choco">
+        <h3>Cake Choco</h3>
+        <p class="precio">$150</p>
+        <button class="agregar" onclick="agregarAlCarrito('Cake Choco', 150)">Agregar 🛒</button>
+      </div>
+
+      <div class="producto">
+        <img src="p.jpg" alt="Corazón Pastel">
+        <h3>Corazón Pastel</h3>
+        <p class="precio">$210</p>
+        <button class="agregar" onclick="agregarAlCarrito('Corazón Pastel', 210)">Agregar 🛒</button>
+      </div>
+
+      <div class="producto">
+        <img src="dj.jpg" alt="Galleta Reina">
+        <h3>Galleta Reina</h3>
+        <p class="precio">$75</p>
+        <button class="agregar" onclick="agregarAlCarrito('Galleta Reina', 75)">Agregar 🛒</button>
+      </div>
+
+      <div class="producto">
+        <img src="tt.jpg" alt="Mini Tarta de Arcoiris">
+        <h3>Mini Tarta Arcoiris</h3>
+        <p class="precio">$190</p>
+        <button class="agregar" onclick="agregarAlCarrito('Mini Tarta Arcoiris', 190)">Agregar 🛒</button>
+      </div>
+
+    </div>
+  </section>
+  <div class="contenedor-boton">
+    <a href="Tienda.html" class="boton-regresar">Pagina Inicio</a>
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    MI DULCE GUSTO 2025
+  </footer>
+
+  <!-- Script agregar al carrito -->
+  <script>
+    function agregarAlCarrito(nombre, precio) {
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      window.location.href = "pract1.html";
+    }
+  </script>
+
+ 
+</body>
+</html>
